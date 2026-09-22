@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>韩剧青青草-高清韩剧在线观看与资源导航平台</title>
+    <meta name="description" content="韩剧青青草提供最新韩剧、热门韩剧在线观看，包含剧情介绍、演员阵容及高清资源导航。致力于为观众提供安全、流畅的韩剧观影体验。">
+    <meta name="keywords" content="韩剧青青草, 韩剧在线观看, 韩剧资源, 韩剧推荐, 韩剧大全">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #3b82f6;
+            --secondary-color: #10b981;
+            --dark-bg: #111827;
+            --card-bg: #1f2937;
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            --border-color: #374151;
+            --font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--dark-bg);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--primary-color);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 16px;
+        }
+
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        @media (max-width: 900px) {
+            .grid-4 { grid-template-columns: repeat(2, 1fr); }
+            .grid-3 { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 600px) {
+            .grid-4 { grid-template-columns: 1fr; }
+            .grid-3 { grid-template-columns: 1fr; }
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(17, 24, 39, 0.95);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(8px);
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 64px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 24px;
+        }
+
+        nav a {
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .search-box {
+            display: flex;
+            background: var(--card-bg);
+            border-radius: 6px;
+            padding: 4px;
+            border: 1px solid var(--border-color);
+        }
+
+        .search-box input {
+            background: transparent;
+            border: none;
+            color: var(--text-main);
+            padding: 6px 12px;
+            width: 180px;
+            outline: none;
+        }
+
+        .search-box button {
+            background: var(--primary-color);
+            border: none;
+            color: white;
+            padding: 0 12px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 400px;
+            background: linear-gradient(to right, rgba(17, 24, 39, 0.9), rgba(17, 24, 39, 0.4)), url('https://picsum.photos/seed/kdrama1/1200/600') center/cover;
+            display: flex;
+            align-items: center;
+            padding: 40px 0;
+        }
+
+        .hero-content {
+            max-width: 600px;
+        }
+
+        .hero-tag {
+            background-color: var(--secondary-color);
+            color: #fff;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 12px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            color: var(--text-muted);
+            margin-bottom: 24px;
+            font-size: 1.1rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 24px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+
+        .btn:hover {
+            background-color: #2563eb;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 1px solid var(--border-color);
+            margin-left: 10px;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--card-bg);
+            border-color: var(--text-main);
+        }
+
+        /* Section Styling */
+        section {
+            padding: 40px 0;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            margin-bottom: 24px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 12px;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            color: var(--text-main);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -13px;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+
+        .view-all {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* Card Styles */
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            border-color: var(--primary-color);
+        }
+
+        .card-img {
+            position: relative;
+            padding-top: 140%; /* Aspect Ratio */
+            overflow: hidden;
+        }
+
+        .card-img img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .card:hover .card-img img {
+            transform: scale(1.05);
+        }
+
+        .card-badges {
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            display: flex;
+            gap: 4px;
+        }
+
+        .badge {
+            font-size: 0.7rem;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .badge-new { background-color: var(--primary-color); color: white; }
+        .badge-hot { background-color: #ef4444; color: white; }
+
+        .card-body {
+            padding: 16px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-meta {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        .card-desc {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+            flex: 1;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+            padding-top: 12px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .quality-tag {
+            color: var(--secondary-color);
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+
+        /* Genre Tags */
+        .genre-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .genre-tag {
+            background-color: rgba(59, 130, 246, 0.1);
+            color: var(--primary-color);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+        }
+
+        /* FAQ Section */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            margin-bottom: 12px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: var(--card-bg);
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.2rem;
+            color: var(--text-muted);
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--primary-color);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            padding: 0 16px;
+            background-color: #252f3f;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 0 16px 16px;
+            max-height: 200px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0b0f19;
+            padding: 40px 0 20px;
+            margin-top: 60px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+            .header-inner { flex-direction: column; height: auto; padding: 12px 0; gap: 12px; }
+            .hero { height: 300px; }
+            .hero h1 { font-size: 1.8rem; }
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <span>🎬</span> 韩剧青青草
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">最新更新</a></li>
+                    <li><a href="#">韩剧大全</a></li>
+                    <li><a href="#">排行榜</a></li>
+                </ul>
+            </nav>
+            <div class="search-box">
+                <input type="text" placeholder="搜索韩剧名称...">
+                <button>🔍</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <span class="hero-tag">本周热门推荐</span>
+                    <h1>《黑暗荣耀》：复仇与救赎的极致演绎</h1>
+                    <p>在这部备受瞩目的高分韩剧中，女主角文东恩在高中时期遭受霸凌，经过精心策划的复仇，向施暴者们展开了残酷的反击。剧情紧凑，演技炸裂，不容错过。</p>
+                    <div style="margin-bottom: 15px;">
+                        <span class="genre-tag">复仇</span>
+                        <span class="genre-tag">剧情</span>
+                        <span class="genre-tag">悬疑</span>
+                    </div>
+                    <div>
+                        <a href="#" class="btn">立即观看</a>
+                        <a href="#" class="btn btn-outline">加入片单</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Updated Today Section -->
+        <section>
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">最新更新</h2>
+                    <a href="#" class="view-all">查看更多 &rarr;</a>
+                </div>
+                <div class="grid-4">
+                    <!-- Card 1 -->
+                    <article class="card">
+                        <div class="card-img">
+                            <span class="badge badge-new">更新至12集</span>
+                            <img src="https://picsum.photos/seed/drama1/300/400" alt="韩剧封面">
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">泪之女王</h3>
+                            <div class="card-meta">
+                                <span>2024</span>
+                                <span>16集</span>
+                            </div>
+                            <p class="card-desc">财阀女王与国民会计师之间跌宕起伏的爱情故事，从欢喜冤家到生死相依。</p>
+                            <div class="card-footer">
+                                <span class="quality-tag">HD</span>
+                                <a href="#" style="font-size:0.9rem; color:var(--primary-color)">播放 &rarr;</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 2 -->
+                    <article class="card">
+                        <div class="card-img">
+                            <span class="badge badge-hot">TOP1</span>
+                            <img src="https://picsum.photos/seed/drama2/300/400" alt="韩剧封面">
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">背着善宰跑</h3>
+                            <div class="card-meta">
+                                <span>2023</span>
+                                <span>16集</span>
+                            </div>
+                            <p class="card-desc">穿越时空的恋爱喜剧，现代女团成员意外回到过去，与高中偶像善宰相遇。</p>
+                            <div class="card-footer">
+                                <span class="quality-tag">4K</span>
+                                <a href="#" style="font-size:0.9rem; color:var(--primary-color)">播放 &rarr;</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 3 -->
+                    <article class="card">
+                        <div class="card-img">
+                            <img src="https://picsum.photos/seed/drama3/300/400" alt="韩剧封面">
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">眼泪女王</h3>
+                            <div class="card-meta">
+                                <span>2024</span>
+                                <span>16集</span>
+                            </div>
+                            <p class="card-desc">讲述顶级财阀家女王与国民会计师之间充满戏剧性的爱情故事。</p>
+                            <div class="card-footer">
+                                <span class="quality-tag">HD</span>
+                                <a href="#" style="font-size:0.9rem; color:var(--primary-color)">播放 &rarr;</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 4 -->
+                    <article class="card">
+                        <div class="card-img">
+                            <img src="https://picsum.photos/seed/drama4/300/400" alt="韩剧封面">
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">我的出走日记</h3>
+                            <div class="card-meta">
+                                <span>2022</span>
+                                <span>16集</span>
+                            </div>
+                            <p class="card-desc">关注现代年轻人的生存状态，三兄妹决定离家出走，寻找生活的出口。</p>
+                            <div class="card-footer">
+                                <span class="quality-tag">HD</span>
+                                <a href="#" style="font-size:0.9rem; color:var(--primary-color)">播放 &rarr;</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Top 10 Section -->
+        <section style="background-color: #161b22;">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">年度高分榜</h2>
+                    <a href="#" class="view-all">查看榜单 &rarr;</a>
+                </div>
+                <div class="grid-3">
+                    <!-- Top List Item 1 -->
+                    <div class="card" style="flex-direction: row; height: 140px; padding: 0; overflow: hidden;">
+                        <div style="width: 80px; height: 100%; flex-shrink: 0; background: #374151; display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: bold; color: #ef4444; border-right: 1px solid var(--border-color);">1</div>
+                        <div style="padding: 16px; flex: 1; display: flex; flex-direction: column; justify-content: center;">
+                            <h3 style="margin-bottom: 8px;">非常律师禹英禑</h3>
+                            <p style="font-size: 0.85rem; color: var(--text-muted);">治愈 / 职场 / 励志</p>
+                        </div>
+                    </div>
+
+                    <!-- Top List Item 2 -->
+                    <div class="card" style="flex-direction: row; height: 140px; padding: 0; overflow: hidden;">
+                        <div style="width: 80px; height: 100%; flex-shrink: 0; background: #374151; display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: bold; color: #f59e0b; border-right: 1px solid var(--border-color);">2</div>
+                        <div style="padding: 16px; flex: 1; display: flex; flex-direction: column; justify-content: center;">
+                            <h3 style="margin-bottom: 8px;">机智的医生生活</h3>
+                            <p style="font-size: 0.85rem; color: var(--text-muted);">温馨 / 医疗 / 喜剧</p>
+                        </div>
+                    </div>
+
+                    <!-- Top List Item 3 -->
+                    <div class="card" style="flex-direction: row; height: 140px; padding: 0; overflow: hidden;">
+                        <div style="width: 80px; height: 100%; flex-shrink: 0; background: #374151; display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: bold; color: #6b7280; border-right: 1px solid var(--border-color);">3</div>
+                        <div style="padding: 16px; flex: 1; display: flex; flex-direction: column; justify-content: center;">
+                            <h3 style="margin-bottom: 8px;">我的解放日志</h3>
+                            <p style="font-size: 0.85rem; color: var(--text-muted);">生活 / 剧情 / 治愈</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section>
+            <div class="container faq-container">
+                <div class="section-header">
+                    <h2 class="section-title">常见问题 (FAQ)</h2>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">在韩剧青青草观看需要付费吗？</div>
+                    <div class="faq-answer">
+                        <p>韩剧青青草致力于为用户提供免费的高清韩剧观看资源。大部分剧集无需注册即可观看，部分独家内容可能需要登录会员账户。</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">网站提供的视频清晰度如何？</div>
+                    <div class="faq-answer">
+                        <p>我们提供多种清晰度选择，包括720P (HD)、1080P (Full HD) 以及部分4K资源。具体清晰度取决于您设备支持的格式以及该剧集的上传源。</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">更新频率是怎样的？</div>
+                    <div class="faq-answer">
+                        <p>网站会在韩剧官方更新后的24-48小时内同步上传高清资源，确保用户能第一时间追剧。建议收藏本站以获取最新更新通知。</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">如何反馈播放问题？</div>
+                    <div class="faq-answer">
+                        <p>如果您在观看过程中遇到卡顿、无法播放或资源失效的问题，可以通过页面底部的联系表单或社交媒体私信与我们联系，我们会尽快处理。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="#" class="logo" style="margin-bottom: 16px; display:inline-block;">
+                        <span>🎬</span> 韩剧青青草
+                    </a>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">
+                        专注于韩剧资源的整合与分享，为您提供最新、最全的韩剧观看指南。无论是浪漫爱情、热血复仇还是治愈生活，这里都有您想看的故事。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>热门分类</h4>
+                    <ul>
+                        <li><a href="#">爱情剧</a></li>
+                        <li><a href="#">复仇剧</a></li>
+                        <li><a href="#">职场剧</a></li>
+                        <li><a href="#">古装剧</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>帮助中心</h4>
+                    <ul>
+                        <li><a href="#">播放教程</a></li>
+                        <li><a href="#">版权声明</a></li>
+                        <li><a href="#">网站地图</a></li>
+                        <li><a href="#">联系站长</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关注我们</h4>
+                    <ul>
+                        <li><a href="#">微信公众号</a></li>
+                        <li><a href="#">新浪微博</a></li>
+                        <li><a href="#">粉丝群</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 韩剧青青草 All Rights Reserved. 本站内容仅供学习交流，请于下载后24小时内删除。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple FAQ Accordion Logic
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // Close other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // Toggle current item
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+                          </html>
