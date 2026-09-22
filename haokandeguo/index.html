@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="国产动漫推荐与在线观看指南，汇集热血、治愈、国风、科幻等热门国产动画作品，提供高清观看入口与深度剧情解析。">
+    <meta name="keywords" content="好看的国产动漫,国漫推荐,国产动画,国产动漫在线观看">
+    <title>好看的国产动漫-热门国漫推荐与高清在线观看指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #ff6b35;
+            --secondary-color: #2c3e50;
+            --accent-color: #00d2d3;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-light: #666666;
+            --spacing-unit: 16px;
+            --container-width: 1200px;
+            --radius: 8px;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--secondary-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 24px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+            transition: var(--transition);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .search-box {
+            display: flex;
+            background: #f1f2f6;
+            border-radius: 20px;
+            padding: 4px 12px;
+        }
+
+        .search-box input {
+            border: none;
+            background: transparent;
+            outline: none;
+            padding: 6px;
+            width: 200px;
+            color: var(--text-main);
+        }
+
+        .search-box button {
+            background: transparent;
+            border: none;
+            color: var(--text-light);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('https://picsum.photos/seed/animehero/1600/600'); /* Abstract anime feel */
+            background-size: cover;
+            background-position: center;
+            opacity: 0.2;
+            mix-blend-mode: overlay;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 32px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            background-color: #ff8555;
+        }
+
+        /* Filter Bar */
+        .filter-bar {
+            max-width: var(--container-width);
+            margin: -40px auto 30px;
+            padding: 0 var(--spacing-unit);
+            position: relative;
+            z-index: 10;
+        }
+
+        .filter-container {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .filter-group {
+            display: flex;
+            gap: 10px;
+        }
+
+        .filter-btn {
+            padding: 8px 16px;
+            border: 1px solid #e1e4e8;
+            border-radius: 20px;
+            background: white;
+            color: var(--text-light);
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 0.9rem;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--secondary-color);
+            color: white;
+            border-color: var(--secondary-color);
+        }
+
+        /* Main Content Grid */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+            padding-bottom: 60px;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+            border-left: 5px solid var(--primary-color);
+            padding-left: 15px;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 24px;
+        }
+
+        .anime-card {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            cursor: pointer;
+            position: relative;
+        }
+
+        .anime-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-image-wrapper {
+            position: relative;
+            padding-top: 140%; /* 5:7 Aspect Ratio */
+            overflow: hidden;
+        }
+
+        .card-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .anime-card:hover .card-image {
+            transform: scale(1.05);
+        }
+
+        .card-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            backdrop-filter: blur(4px);
+        }
+
+        .card-content {
+            padding: 16px;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-bottom: 12px;
+        }
+
+        .card-rating {
+            color: #f1c40f;
+            font-weight: bold;
+        }
+
+        .card-tags {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            font-size: 0.75rem;
+            background: #f1f2f6;
+            color: var(--text-light);
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+
+        /* Featured Section */
+        .featured-section {
+            background: #fff;
+            padding: 40px 0;
+            margin-bottom: 40px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .featured-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 24px;
+        }
+
+        .featured-card {
+            position: relative;
+            border-radius: var(--radius);
+            overflow: hidden;
+            height: 100%;
+            min-height: 300px;
+        }
+
+        .featured-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .featured-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+            padding: 30px;
+            color: white;
+        }
+
+        .featured-overlay h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .featured-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .mini-card {
+            display: flex;
+            gap: 15px;
+            background: #f8f9fa;
+            padding: 10px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .mini-card:hover {
+            background: #e9ecef;
+        }
+
+        .mini-card img {
+            width: 80px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
+        .mini-info h4 {
+            font-size: 1rem;
+            margin-bottom: 4px;
+        }
+
+        .mini-info p {
+            font-size: 0.8rem;
+            color: var(--text-light);
+        }
+
+        /* Guide Section */
+        .guide-section {
+            background: var(--secondary-color);
+            color: white;
+            padding: 60px 0;
+            margin-top: 40px;
+        }
+
+        .guide-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .guide-item h3 {
+            color: var(--accent-color);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .guide-item p {
+            color: #bdc3c7;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+
+        .guide-item ul li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 10px;
+            color: #bdc3c7;
+        }
+
+        .guide-item ul li::before {
+            content: '•';
+            color: var(--accent-color);
+            position: absolute;
+            left: 0;
+        }
+
+        /* Footer */
+        footer {
+            background: #222;
+            color: #999;
+            padding: 40px 0 20px;
+            font-size: 0.9rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid #333;
+            padding-top: 20px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .nav-container { flex-direction: column; height: auto; padding: 15px; }
+            nav ul { margin: 15px 0; gap: 15px; font-size: 0.9rem; }
+            .search-box { display: none; }
+            .featured-grid { grid-template-columns: 1fr; }
+            .guide-grid { grid-template-columns: 1fr; }
+            .filter-container { flex-direction: column; align-items: stretch; }
+            .filter-group { overflow-x: auto; padding-bottom: 5px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">国漫<span>视界</span></a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">热血动作</a></li>
+                    <li><a href="#">国风古韵</a></li>
+                    <li><a href="#">治愈日常</a></li>
+                    <li><a href="#">科幻未来</a></li>
+                    <li><a href="#">榜单排行</a></li>
+                </ul>
+            </nav>
+            <div class="search-box">
+                <input type="text" placeholder="搜索好看的国产动漫...">
+                <button>🔍</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>探索中国动画的魅力</h1>
+                <p>从热血战斗到细腻叙事，发现那些不容错过的精品国产动漫作品。</p>
+                <a href="#recommendations" class="btn-primary">开始探索</a>
+            </div>
+        </section>
+
+        <!-- Filter Bar -->
+        <div class="filter-bar">
+            <div class="filter-container">
+                <div class="filter-group">
+                    <button class="filter-btn active">全部</button>
+                    <button class="filter-btn">热门推荐</button>
+                    <button class="filter-btn">新番上线</button>
+                    <button class="filter-btn">完结佳作</button>
+                </div>
+                <div class="filter-group">
+                    <button class="filter-btn">3D动画</button>
+                    <button class="filter-btn">2D动画</button>
+                    <button class="filter-btn">剧场版</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Featured Section -->
+        <section class="featured-section" id="recommendations">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">本周重磅推荐</h2>
+                    <a href="#" style="color:var(--primary-color); font-weight:600;">查看更多 &rarr;</a>
+                </div>
+                <div class="featured-grid">
+                    <article class="featured-card">
+                        <img src="https://picsum.photos/seed/animation1/800/400" alt="国产动漫封面">
+                        <div class="featured-overlay">
+                            <span style="background:var(--primary-color); padding:2px 8px; border-radius:4px; font-size:0.8rem;">高人气</span>
+                            <h2>时空回响：东方纪元</h2>
+                            <p style="margin-top:8px; opacity:0.9;">讲述了少年在古风与现代交织的世界中，寻找失落的传说，揭开家族秘密的故事。</p>
+                            <div style="margin-top:15px; display:flex; gap:10px;">
+                                <span class="tag">国风</span>
+                                <span class="tag">冒险</span>
+                                <span class="tag">9.8分</span>
+                            </div>
+                        </div>
+                    </article>
+                    <div class="featured-list">
+                        <div class="mini-card">
+                            <img src="https://picsum.photos/seed/animation2/100/120" alt="推荐动漫">
+                            <div class="mini-info">
+                                <h4>深海之下</h4>
+                                <p>科幻 / 悬疑</p>
+                                <p style="color:#ff6b35; font-size:0.8rem;">9.5分</p>
+                            </div>
+                        </div>
+                        <div class="mini-card">
+                            <img src="https://picsum.photos/seed/animation3/100/120" alt="推荐动漫">
+                            <div class="mini-info">
+                                <h4>少年歌行</h4>
+                                <p>武侠 / 搞笑</p>
+                                <p style="color:#ff6b35; font-size:0.8rem;">9.2分</p>
+                            </div>
+                        </div>
+                        <div class="mini-card">
+                            <img src="https://picsum.photos/seed/animation4/100/120" alt="推荐动漫">
+                            <div class="mini-info">
+                                <h4>镇魂街</h4>
+                                <p>热血 / 战斗</p>
+                                <p style="color:#ff6b35; font-size:0.8rem;">9.0分</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Content Grid -->
+        <section class="container">
+            <div class="section-header">
+                <h2 class="section-title">精选国漫库</h2>
+            </div>
+            <div class="grid">
+                <!-- Card 1 -->
+                <article class="anime-card">
+                    <div class="card-image-wrapper">
+                        <img src="https://picsum.photos/seed/cn1/300/420" class="card-image" alt="动漫封面">
+                        <span class="card-badge">更新至 24集</span>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">灵域传说</h3>
+                        <div class="card-meta">
+                            <span>动作</span>
+                            <span class="card-rating">★ 9.6</span>
+                        </div>
+                        <div class="card-tags">
+                            <span class="tag">玄幻</span>
+                            <span class="tag">3D</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 2 -->
+                <article class="anime-card">
+                    <div class="card-image-wrapper">
+                        <img src="https://picsum.photos/seed/cn2/300/420" class="card-image" alt="动漫封面">
+                        <span class="card-badge">已完结</span>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">水墨江湖</h3>
+                        <div class="card-meta">
+                            <span>武侠</span>
+                            <span class="card-rating">★ 9.8</span>
+                        </div>
+                        <div class="card-tags">
+                            <span class="tag">国风</span>
+                            <span class="tag">2D</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 3 -->
+                <article class="anime-card">
+                    <div class="card-image-wrapper">
+                        <img src="https://picsum.photos/seed/cn3/300/420" class="card-image" alt="动漫封面">
+                        <span class="card-badge">连载中</span>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">机械之心</h3>
+                        <div class="card-meta">
+                            <span>科幻</span>
+                            <span class="card-rating">★ 9.3</span>
+                        </div>
+                        <div class="card-tags">
+                            <span class="tag">机甲</span>
+                            <span class="tag">3D</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 4 -->
+                <article class="anime-card">
+                    <div class="card-image-wrapper">
+                        <img src="https://picsum.photos/seed/cn4/300/420" class="card-image" alt="动漫封面">
+                        <span class="card-badge">更新至 12集</span>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">校园物语</h3>
+                        <div class="card-meta">
+                            <span>日常</span>
+                            <span class="card-rating">★ 9.0</span>
+                        </div>
+                        <div class="card-tags">
+                            <span class="tag">治愈</span>
+                            <span class="tag">2D</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 5 -->
+                <article class="anime-card">
+                    <div class="card-image-wrapper">
+                        <img src="https://picsum.photos/seed/cn5/300/420" class="card-image" alt="动漫封面">
+                        <span class="card-badge">新番</span>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">龙蛇演义</h3>
+                        <div class="card-meta">
+                            <span>动作</span>
+                            <span class="card-rating">★ 8.9</span>
+                        </div>
+                        <div class="card-tags">
+                            <span class="tag">武术</span>
+                            <span class="tag">写实</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 6 -->
+                <article class="anime-card">
+                    <div class="card-image-wrapper">
+                        <img src="https://picsum.photos/seed/cn6/300/420" class="card-image" alt="动漫封面">
+                        <span class="card-badge">已完结</span>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">幻想山海</h3>
+                        <div class="card-meta">
+                            <span>奇幻</span>
+                            <span class="card-rating">★ 9.7</span>
+                        </div>
+                        <div class="card-tags">
+                            <span class="tag">神话</span>
+                            <span class="tag">3D</span>
+                        </div>
+                    </div>
+                </article>
+                 <!-- Card 7 -->
+                 <article class="anime-card">
+                    <div class="card-image-wrapper">
+                        <img src="https://picsum.photos/seed/cn7/300/420" class="card-image" alt="动漫封面">
+                        <span class="card-badge">更新至 30集</span>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">暗夜行者</h3>
+                        <div class="card-meta">
+                            <span>悬疑</span>
+                            <span class="card-rating">★ 9.1</span>
+                        </div>
+                        <div class="card-tags">
+                            <span class="tag">侦探</span>
+                            <span class="tag">2D</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 8 -->
+                <article class="anime-card">
+                    <div class="card-image-wrapper">
+                        <img src="https://picsum.photos/seed/cn8/300/420" class="card-image" alt="动漫封面">
+                        <span class="card-badge">连载中</span>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">星际漫游</h3>
+                        <div class="card-meta">
+                            <span>科幻</span>
+                            <span class="card-rating">★ 8.8</span>
+                        </div>
+                        <div class="card-tags">
+                            <span class="tag">太空</span>
+                            <span class="tag">冒险</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Guide Section -->
+        <section class="guide-section">
+            <div class="container">
+                <div class="guide-grid">
+                    <div class="guide-item">
+                        <h3>如何选择国漫？</h3>
+                        <p>国产动画近年来发展迅速，涵盖了从热血战斗到细腻治愈的多种题材。</p>
+                        <ul>
+                            <li>关注制作公司口碑</li>
+                            <li>查看评分与弹幕反馈</li>
+                            <li>根据兴趣选择题材</li>
+                        </ul>
+                    </div>
+                    <div class="guide-item">
+                        <h3>观看渠道推荐</h3>
+                        <p>主流视频平台均已上线大量优质国漫，支持高清播放与弹幕互动。</p>
+                        <ul>
+                            <li>国内头部视频平台</li>
+                            <li>正版动画播出平台</li>
+                            <li>支持国产动画发展</li>
+                        </ul>
+                    </div>
+                    <div class="guide-item">
+                        <h3>行业趋势</h3>
+                        <p>随着技术的进步，3D技术与传统手绘的结合日益成熟。</p>
+                        <ul>
+                            <li>技术融合带来新视觉</li>
+                            <li>原创IP不断涌现</li>
+                            <li>走向国际市场</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>国漫视界</h4>
+                <p>致力于为中国动画爱好者提供最全面的资讯与观看指南。</p>
+            </div>
+            <div class="footer-col">
+                <h4>热门分类</h4>
+                <ul>
+                    <li><a href="#">热血动作</a></li>
+                    <li><a href="#">国风古韵</a></li>
+                    <li><a href="#">治愈日常</a></li>
+                    <li><a href="#">科幻未来</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>帮助中心</h4>
+                <ul>
+                    <li><a href="#">关于我们</a></li>
+                    <li><a href="#">版权声明</a></li>
+                    <li><a href="#">联系方式</a></li>
+                    <li><a href="#">意见反馈</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 国漫视界. All Rights Reserved. 本站为演示页面，不提供实际视频资源。</p>
+        </div>
+    </footer>
+
+</body>
+  </html>
