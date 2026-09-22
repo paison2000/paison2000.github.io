@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="任务少的仙侠手游推荐与精选列表，包含挂机放置、自动寻路、离线收益等轻松玩法的仙侠类手机游戏，适合追求轻松体验的玩家。">
+    <meta name="keywords" content="任务少的仙侠手游,轻松仙侠,挂机手游,仙侠放置">
+    <title>任务少的仙侠手游-轻松挂机与自动寻路仙侠游戏推荐</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #d4a017;
+            --primary-hover: #b8860b;
+            --bg-dark: #121212;
+            --bg-card: #1e1e1e;
+            --text-main: #e0e0e0;
+            --text-sub: #a0a0a0;
+            --border-color: #333;
+            --spacing-unit: 16px;
+            --radius-md: 8px;
+            --radius-lg: 12px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--primary-color);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* 头部导航 */
+        header {
+            background-color: rgba(18, 18, 18, 0.95);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 1rem 0;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .nav-links a {
+            font-size: 0.95rem;
+            color: var(--text-sub);
+        }
+
+        .nav-links a.active {
+            color: var(--primary-color);
+        }
+
+        /* Hero 区域 */
+        .hero {
+            background: linear-gradient(135deg, #2c1810 0%, #121212 100%);
+            padding: 60px 0;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-sub);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background-color: rgba(212, 160, 23, 0.1);
+            color: var(--primary-color);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            border: 1px solid rgba(212, 160, 23, 0.2);
+        }
+
+        /* 筛选栏 */
+        .filter-bar {
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .filter-options {
+            display: flex;
+            gap: 12px;
+            overflow-x: auto;
+            padding-bottom: 8px;
+            scrollbar-width: none;
+        }
+
+        .filter-options::-webkit-scrollbar {
+            display: none;
+        }
+
+        .filter-btn {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            color: var(--text-sub);
+            padding: 8px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: all 0.2s;
+            font-size: 0.9rem;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background-color: var(--primary-color);
+            color: #000;
+            border-color: var(--primary-color);
+        }
+
+        /* 游戏列表网格 */
+        .game-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 24px;
+            padding: 40px 0;
+        }
+
+        .game-card {
+            background-color: var(--bg-card);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .game-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            border-color: var(--primary-color);
+        }
+
+        .card-cover {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            background-color: #2a2a2a;
+        }
+
+        .card-content {
+            padding: 16px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .game-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #fff;
+        }
+
+        .game-tags {
+            display: flex;
+            gap: 6px;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+        }
+
+        .mini-tag {
+            font-size: 0.7rem;
+            padding: 2px 6px;
+            border-radius: 4px;
+            background-color: rgba(255, 255, 255, 0.05);
+            color: var(--text-sub);
+        }
+
+        .mini-tag.hot {
+            background-color: rgba(255, 69, 0, 0.2);
+            color: #ff4500;
+        }
+
+        .game-desc {
+            font-size: 0.9rem;
+            color: var(--text-sub);
+            margin-bottom: 16px;
+            flex: 1;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+            padding-top: 12px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .download-btn {
+            background-color: var(--primary-color);
+            color: #000;
+            padding: 6px 16px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: inline-block;
+        }
+
+        .download-btn:hover {
+            background-color: var(--primary-hover);
+        }
+
+        /* 优势板块 */
+        .features-section {
+            background-color: #181818;
+            padding: 60px 0;
+            margin-top: 40px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-header h2 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .feature-title {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .feature-text {
+            color: var(--text-sub);
+            font-size: 0.9rem;
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: #0a0a0a;
+            padding: 40px 0;
+            border-top: 1px solid var(--border-color);
+            margin-top: 60px;
+            text-align: center;
+            color: var(--text-sub);
+            font-size: 0.9rem;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        /* 响应式调整 */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .nav-links {
+                display: none; /* 简化移动端展示 */
+            }
+
+            .game-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <div class="logo">
+                <span>☯</span> 轻松仙侠
+            </div>
+            <nav class="nav-links">
+                <a href="#" class="active">首页</a>
+                <a href="#">最新推荐</a>
+                <a href="#">排行榜</a>
+                <a href="#">下载专区</a>
+                <a href="#">攻略资讯</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>任务少的仙侠手游</h1>
+                <p>告别繁琐日常，回归修仙本心。精选挂机、自动寻路、离线收益类仙侠游戏，让您在碎片化时间也能享受修仙乐趣。</p>
+                <div class="hero-tags">
+                    <span class="tag">挂机放置</span>
+                    <span class="tag">一键修仙</span>
+                    <span class="tag">零氪福利</span>
+                    <span class="tag">自动战斗</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Filter Section -->
+        <div class="container">
+            <div class="filter-bar">
+                <div class="filter-options">
+                    <button class="filter-btn active">全部推荐</button>
+                    <button class="filter-btn">放置挂机</button>
+                    <button class="filter-btn">自动寻路</button>
+                    <button class="filter-btn">离线收益</button>
+                    <button class="filter-btn">修仙模拟</button>
+                    <button class="filter-btn">回合制</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Game List -->
+        <section class="container">
+            <div class="game-grid">
+                
+                <!-- Game Card 1 -->
+                <article class="game-card">
+                    <img src="https://picsum.photos/seed/xianxia1/300/160" alt="飞升之路游戏封面" class="card-cover">
+                    <div class="card-content">
+                        <h3 class="game-title">飞升之路：归隐篇</h3>
+                        <div class="game-tags">
+                            <span class="mini-tag hot">高福利</span>
+                            <span class="mini-tag">自动寻路</span>
+                            <span class="mini-tag">挂机升级</span>
+                        </div>
+                        <p class="game-desc">真正的“摸鱼”修仙体验。无需手动操作，角色自动打怪、自动寻路、自动领取奖励。挂机一整天，上线直接领战力，适合不想肝游戏的佛系玩家。</p>
+                        <div class="card-footer">
+                            <span style="font-size:0.8rem; color:#666;">iOS / Android</span>
+                            <a href="#" class="download-btn">立即下载</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Game Card 2 -->
+                <article class="game-card">
+                    <img src="https://picsum.photos/seed/xianxia2/300/160" alt="仙域逍遥游戏封面" class="card-cover">
+                    <div class="card-content">
+                        <h3 class="game-title">仙域逍遥录</h3>
+                        <div class="game-tags">
+                            <span class="mini-tag">离线收益</span>
+                            <span class="mini-tag">修仙模拟</span>
+                            <span class="mini-tag">养成</span>
+                        </div>
+                        <p class="game-desc">主打离线挂机玩法，关闭游戏后依然会根据挂机时长增加灵气与修为。上线只需一键领取资源，专注于收集稀有坐骑和神兽，画风唯美。</p>
+                        <div class="card-footer">
+                            <span style="font-size:0.8rem; color:#666;">iOS / Android</span>
+                            <a href="#" class="download-btn">立即下载</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Game Card 3 -->
+                <article class="game-card">
+                    <img src="https://picsum.photos/seed/xianxia3/300/160" alt="剑影无痕游戏封面" class="card-cover">
+                    <div class="card-content">
+                        <h3 class="game-title">剑影无痕：自动版</h3>
+                        <div class="game-tags">
+                            <span class="mini-tag hot">热门</span>
+                            <span class="mini-tag">回合制</span>
+                            <span class="mini-tag">自动战斗</span>
+                        </div>
+                        <p class="game-desc">经典的仙侠回合制战斗，但大幅简化了操作流程。提供“自动战斗”和“托管挂机”功能，日常任务自动完成，让您轻松体验PVP竞技乐趣。</p>
+                        <div class="card-footer">
+                            <span style="font-size:0.8rem; color:#666;">iOS / Android</span>
+                            <a href="#" class="download-btn">立即下载</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Game Card 4 -->
+                <article class="game-card">
+                    <img src="https://picsum.photos/seed/xianxia4/300/160" alt="九天仙途游戏封面" class="card-cover">
+                    <div class="card-content">
+                        <h3 class="game-title">九天仙途</h3>
+                        <div class="game-tags">
+                            <span class="mini-tag">放置</span>
+                            <span class="mini-tag">一键扫荡</span>
+                            <span class="mini-tag">无广告</span>
+                        </div>
+                        <p class="game-desc">专为忙碌的上班族设计。主线剧情自动推进，副本关卡支持一键扫荡，无需重复刷怪。只需关注核心养成节点，轻松达到满级。</p>
+                        <div class="card-footer">
+                            <span style="font-size:0.8rem; color:#666;">iOS / Android</span>
+                            <a href="#" class="download-btn">立即下载</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Game Card 5 -->
+                <article class="game-card">
+                    <img src="https://picsum.photos/seed/xianxia5/300/160" alt="道缘录游戏封面" class="card-cover">
+                    <div class="card-content">
+                        <h3 class="game-title">道缘录</h3>
+                        <div class="game-tags">
+                            <span class="mini-tag">修仙模拟</span>
+                            <span class="mini-tag">佛系</span>
+                            <span class="mini-tag">剧情丰富</span>
+                        </div>
+                        <p class="game-desc">修仙世界的模拟器，没有强制性的每日任务压力。您可以根据自己的意愿决定何时修炼、何时休息。节奏缓慢，氛围轻松，适合放松心情。</p>
+                        <div class="card-footer">
+                            <span style="font-size:0.8rem; color:#666;">iOS / Android</span>
+                            <a href="#" class="download-btn">立即下载</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Game Card 6 -->
+                <article class="game-card">
+                    <img src="https://picsum.photos/seed/xianxia6/300/160" alt="古剑传说游戏封面" class="card-cover">
+                    <div class="card-content">
+                        <h3 class="game-title">古剑传说</h3>
+                        <div class="game-tags">
+                            <span class="mini-tag">挂机</span>
+                            <span class="mini-tag">自动拾取</span>
+                            <span class="mini-tag">多职业</span>
+                        </div>
+                        <p class="game-desc">支持多职业切换，自动拾取所有战利品。游戏内置智能挂机脚本，自动挑战高难度副本，助您快速获取装备和材料，提升战力。</p>
+                        <div class="card-footer">
+                            <span style="font-size:0.8rem; color:#666;">iOS / Android</span>
+                            <a href="#" class="download-btn">立即下载</a>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>为什么选择任务少的仙侠手游？</h2>
+                    <p style="color: var(--text-sub);">针对现代玩家时间碎片化的特点，精心筛选轻松玩法</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon">⏳</div>
+                        <h4 class="feature-title">节省时间成本</h4>
+                        <p class="feature-text">减少重复性点击和跑图操作，将宝贵时间用于社交或休息。</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🛌</div>
+                        <h4 class="feature-title">离线持续收益</h4>
+                        <p class="feature-text">即使不在线，角色也会自动修炼或挂机，回归即拿奖励。</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">😌</div>
+                        <h4 class="feature-title">降低肝度压力</h4>
+                        <p class="feature-text">没有强制性的每日任务限制，玩得随心所欲，不强制氪金。</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🎮</div>
+                        <h4 class="feature-title">轻松上手体验</h4>
+                        <p class="feature-text">优化了新手引导，自动完成前置剧情，让新手也能快速变强。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>关于我们 | 游戏公告 | 免责声明 | 联系客服</p>
+            <p>&copy; 2023 轻松仙侠游戏网. All rights reserved.</p>
+            <p style="font-size: 0.8rem; color: #555;">本站推荐的游戏资源均来自网络，请玩家自行甄别安全风险。</p>
+        </div>
+    </footer>
+
+    <script>
+        // 简单的筛选交互逻辑
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // 移除所有激活状态
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    // 激活当前按钮
+                    this.classList.add('active');
+                    
+                    // 模拟筛选效果（实际项目中通常会过滤列表内容）
+                    const filterText = this.textContent;
+                    console.log('筛选类型:', filterText);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
