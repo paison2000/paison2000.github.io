@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>韩家敏-知名书画家、书法教育家与艺术创作者</title>
+    <meta name="description" content="韩家敏官方网站，展示知名书画家韩家敏的书法作品、绘画艺术、教育理念及艺术成就。了解韩家敏的生平、参展经历及收藏指南。">
+    <meta name="keywords" content="韩家敏,书画家,书法家,国画,书法教育,韩家敏作品">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #c0392b;
+            --bg-color: #f9f9f9;
+            --text-color: #333;
+            --light-text: #666;
+            --card-bg: #ffffff;
+            --border-radius: 8px;
+            --spacing-unit: 1rem;
+            --max-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Layout Utilities */
+        .container {
+            width: 100%;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        section {
+            padding: 4rem 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-color);
+            margin: 0.5rem auto 0;
+        }
+
+        .section-header p {
+            color: var(--light-text);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            color: var(--primary-color);
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--accent-color);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 600px;
+            background: linear-gradient(rgba(44, 62, 80, 0.7), rgba(44, 62, 80, 0.7)), url('https://picsum.photos/seed/artstudio/1920/1080.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero-content p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background-color: var(--accent-color);
+            color: #fff;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: transform 0.2s, background-color 0.2s;
+            border: 2px solid var(--accent-color);
+        }
+
+        .btn:hover {
+            background-color: transparent;
+            color: #fff;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid #fff;
+            color: #fff;
+            margin-left: 1rem;
+        }
+
+        .btn-outline:hover {
+            background-color: #fff;
+            color: var(--primary-color);
+        }
+
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-image img {
+            border-radius: var(--border-radius);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            text-align: justify;
+        }
+
+        /* Works Gallery */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .work-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .work-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .work-img {
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .work-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .work-card:hover .work-img img {
+            transform: scale(1.05);
+        }
+
+        .work-info {
+            padding: 1.5rem;
+        }
+
+        .work-info h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .work-category {
+            font-size: 0.9rem;
+            color: var(--light-text);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        /* Achievements/News */
+        .news-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .news-item {
+            display: flex;
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            align-items: center;
+        }
+
+        .news-date {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            text-align: center;
+            min-width: 80px;
+            margin-right: 1.5rem;
+        }
+
+        .news-date .day {
+            display: block;
+            font-size: 1.5rem;
+            font-weight: bold;
+            line-height: 1;
+        }
+
+        .news-date .month {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+
+        .news-content h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .news-content p {
+            color: var(--light-text);
+            font-size: 0.95rem;
+        }
+
+        /* Contact */
+        .contact-section {
+            background-color: var(--primary-color);
+            color: #fff;
+            text-align: center;
+        }
+
+        .contact-section h2 {
+            color: #fff;
+        }
+
+        .contact-section p {
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 2rem;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .contact-icon {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        footer {
+            background-color: #1a252f;
+            color: #7f8c8d;
+            padding: 2rem 0;
+            text-align: center;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; /* Simplified for mobile */
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-image {
+                order: -1;
+            }
+
+            .news-item {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .news-date {
+                margin-right: 0;
+                margin-bottom: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">韩家敏艺术</div>
+                <div class="nav-links">
+                    <a href="#about">艺术家简介</a>
+                    <a href="#works">艺术作品</a>
+                    <a href="#achievements">艺术成就</a>
+                    <a href="#contact">联系收藏</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <h1>韩家敏</h1>
+                <p>著名书画家、书法家、美术教育家。以笔墨传神，以丹青寄情，致力于中国传统文化艺术的传承与创新。</p>
+                <div class="hero-buttons">
+                    <a href="#works" class="btn">浏览作品</a>
+                    <a href="#about" class="btn btn-outline">了解生平</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about">
+            <div class="container">
+                <div class="section-header">
+                    <h2>艺术家简介</h2>
+                    <p>探寻笔墨背后的故事与艺术追求</p>
+                </div>
+                <div class="about-grid">
+                    <div class="about-image">
+                        <img src="https://picsum.photos/seed/hanartist/600/700.jpg" alt="韩家敏肖像">
+                    </div>
+                    <div class="about-text">
+                        <h3>笔墨丹青，一生所爱</h3>
+                        <p>韩家敏先生自幼酷爱书画，深耕艺术领域数十年。他的作品融合了传统技法的严谨与现代审美的灵动，尤其在书法与国画领域形成了独特的个人风格。作为美术教育家，他致力于培养新一代艺术人才，桃李满天下。</p>
+                        <p>韩家敏的书法笔力遒劲，结构严谨，既有颜柳之风骨，又不失个人创新。他的国画作品意境深远，山水苍茫，花鸟灵动，善于通过色彩与构图的平衡传达出宁静致远的艺术境界。</p>
+                        <a href="#contact" class="btn">预约访谈</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Works Section -->
+        <section id="works">
+            <div class="container">
+                <div class="section-header">
+                    <h2>艺术作品赏析</h2>
+                    <p>精选书法、国画代表作品展示</p>
+                </div>
+                <div class="gallery-grid">
+                    <!-- Work 1 -->
+                    <article class="work-card">
+                        <div class="work-img">
+                            <img src="https://picsum.photos/seed/inkpainting1/400/300.jpg" alt="韩家敏山水画作品">
+                        </div>
+                        <div class="work-info">
+                            <span class="work-category">国画·山水</span>
+                            <h4>云山问道</h4>
+                            <p style="font-size: 0.9rem; color: #666; margin-top: 0.5rem;">水墨晕染，意境空灵，表现了山川的雄浑与云雾的变幻。</p>
+                        </div>
+                    </article>
+
+                    <!-- Work 2 -->
+                    <article class="work-card">
+                        <div class="work-img">
+                            <img src="https://picsum.photos/seed/inkpainting2/400/300.jpg" alt="韩家敏花鸟画作品">
+                        </div>
+                        <div class="work-info">
+                            <span class="work-category">国画·花鸟</span>
+                            <h4>春江水暖</h4>
+                            <p style="font-size: 0.9rem; color: #666; margin-top: 0.5rem;">以工笔勾勒，色彩明快，生动描绘了春日生机勃勃的景象。</p>
+                        </div>
+                    </article>
+
+                    <!-- Work 3 -->
+                    <article class="work-card">
+                        <div class="work-img">
+                            <img src="https://picsum.photos/seed/calligraphy1/400/300.jpg" alt="韩家敏书法作品">
+                        </div>
+                        <div class="work-info">
+                            <span class="work-category">书法·行书</span>
+                            <h4>静以修身</h4>
+                            <p style="font-size: 0.9rem; color: #666; margin-top: 0.5rem;">笔走龙蛇，气韵流畅，展现了书法家深厚的功底与修养。</p>
+                        </div>
+                    </article>
+
+                    <!-- Work 4 -->
+                    <article class="work-card">
+                        <div class="work-img">
+                            <img src="https://picsum.photos/seed/calligraphy2/400/300.jpg" alt="韩家敏书法作品">
+                        </div>
+                        <div class="work-info">
+                            <span class="work-category">书法·楷书</span>
+                            <h4>厚德载物</h4>
+                            <p style="font-size: 0.9rem; color: #666; margin-top: 0.5rem;">端庄稳重，法度严谨，是传统楷书美学的典范体现。</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Achievements Section -->
+        <section id="achievements">
+            <div class="container">
+                <div class="section-header">
+                    <h2>艺术成就与动态</h2>
+                    <p>回顾韩家敏先生的艺术生涯与重要参展经历</p>
+                </div>
+                <div class="news-list">
+                    <div class="news-item">
+                        <div class="news-date">
+                            <span class="day">15</span>
+                            <span class="month">Oct</span>
+                        </div>
+                        <div class="news-content">
+                            <h4>“墨韵中华”全国书画巡回展在北京开幕</h4>
+                            <p>韩家敏先生参展作品《云山问道》荣获金奖，并受邀担任展览评委。</p>
+                        </div>
+                    </div>
+                    <div class="news-item">
+                        <div class="news-date">
+                            <span class="day">22</span>
+                            <span class="month">Sep</span>
+                        </div>
+                        <div class="news-content">
+                            <h4>韩家敏艺术馆在江南艺术中心落成</h4>
+                            <p>艺术馆内设三个展厅，展出韩家敏先生历年创作精品及收藏珍品。</p>
+                        </div>
+                    </div>
+                    <div class="news-item">
+                        <div class="news-date">
+                            <span class="day">10</span>
+                            <span class="month">Aug</span>
+                        </div>
+                        <div class="news-content">
+                            <h4>举办“薪火相传”书画教育公益讲座</h4>
+                            <p>韩家敏先生亲临现场，为数百名青少年艺术爱好者讲解笔墨技法。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 style="color: #fff;">联系与收藏</h2>
+                    <p style="color: rgba(255,255,255,0.8);">欢迎咨询艺术收藏、合作事宜及书画教学</p>
+                </div>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <span>中国·某市艺术区88号</span>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <span>010-1234-5678</span>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">✉️</div>
+                        <span>contact@hanjiamin.com</span>
+                    </div>
+                </div>
+                <div style="margin-top: 3rem;">
+                    <a href="mailto:contact@hanjiamin.com" class="btn" style="background-color: #fff; color: var(--primary-color); border-color: #fff;">发送邮件</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 韩家敏艺术工作室 版权所有. 保留所有权利.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
